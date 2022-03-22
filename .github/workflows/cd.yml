@@ -21,7 +21,7 @@ jobs:
         run: docker build -t ${{ env.IMAGE_NAME }} .
       - name: Deploy docker image
         run: docker push ${{ env.IMAGE_NAME }}
-      - name: Release application
+      - name: Release
         run: heroku container:release web -a ${{ secrets.HEROKU_APP_NAME }}
 
 
